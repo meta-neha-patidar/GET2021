@@ -3,7 +3,10 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		
 		// TODO Auto-generated method stub
+		@SuppressWarnings("resource")
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter 0 to stop performing any operation : ");
 		System.out.println("Enter 1 to perform addition of two hex values: ");
