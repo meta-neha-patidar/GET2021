@@ -27,7 +27,7 @@ public class ShoppingCart {
 		
 		//for customer end operations while shopping
 		System.out.println("=================================operations on cart for customer ======================");
-		ShoppingCartOperations shopping_cart_operations=new ShoppingCartOperations();
+		
 		System.out.println("Enter 0 to stop operations on cart :");
 		System.out.println("Enter 1 to add item in cart :");
 		System.out.println("Enter 2 to remove one quantity of item from cart :");
@@ -35,8 +35,11 @@ public class ShoppingCart {
 		System.out.println("Enter 4 to display item in cart :");
 		System.out.println("Enter 5 to display bill of cart :");
 		
+		ShoppingCartOperations shopping_cart_operations=new ShoppingCartOperations();				//object of ShoppingCartOperations class
+		
 		int operation_value=scanner.nextInt();
 		while(operation_value != 0){
+			
 			if(operation_value==1){
 				System.out.println("Enter item name : ");
 				String item_name_add=scanner.next();
@@ -59,6 +62,8 @@ public class ShoppingCart {
 			}else{
 				System.out.println("Enter a valid input from 0-5");
 			}
+			shopping_cart_operations.cartPrice();
+			System.out.println("Enter a input from 0-5 to perform any task : ");
 			operation_value=scanner.nextInt();
 		}
 		System.out.println("operations done");

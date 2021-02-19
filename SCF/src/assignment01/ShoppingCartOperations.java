@@ -8,7 +8,7 @@ static HashMap<String,Integer> cart_item_list=new HashMap<>();
 		System.out.println("===================items and quantity in cart======================");
 		System.out.println("item name:\t quantity");
 		for(Map.Entry<String, Integer> iterator: cart_item_list.entrySet()){
-			System.out.println(iterator.getKey()+":\t\t"+iterator.getValue());
+			System.out.println(iterator.getKey()+":\t\t\t"+iterator.getValue());
 		}
 	}
 	
@@ -55,10 +55,23 @@ static HashMap<String,Integer> cart_item_list=new HashMap<>();
 	//billOfCartItemts() method print the total bill of all items present in cart
 	void billOfCartItemts(){
 		float total_price=0;
+		System.out.println("item name\t quantity \t price per quantity \t price of all quantity");
+		
+		for(Map.Entry<String, Integer> bill_iterator: cart_item_list.entrySet()){
+			System.out.println(bill_iterator.getKey()+"\t\t\t"+bill_iterator.getValue()+"\t\t\t"+
+					ShoppingCart.list_of_items.get(bill_iterator.getKey()).price_of_item+
+					"\t\t\t"+ShoppingCart.list_of_items.get(bill_iterator.getKey()).price_of_item*bill_iterator.getValue());
+			total_price+= ShoppingCart.list_of_items.get(bill_iterator.getKey()).price_of_item*bill_iterator.getValue();
+		}
+		
+		System.out.println("\nTotal bill of cart items :\t\t\t\t\t\t"+ total_price);
+	}
+	void cartPrice(){
+		float total_price=0;
 		for(Map.Entry<String, Integer> bill_iterator: cart_item_list.entrySet()){
 			total_price+= ShoppingCart.list_of_items.get(bill_iterator.getKey()).price_of_item*bill_iterator.getValue();
 		}
 		
-		System.out.println("Total bill of cart items : "+ total_price);
+		System.out.println("==================Total price of cart items : "+ total_price+"========================");
 	}
 }
