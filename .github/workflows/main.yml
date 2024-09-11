@@ -29,4 +29,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${{ github.event.inputs.SF_PACKAGE_VERSION }}
+        run: echo github.event.inputs.SF_PACKAGE_VERSION
